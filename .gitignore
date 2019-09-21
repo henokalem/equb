@@ -1,0 +1,9 @@
+.vscode
+.idea
+env
+backend/backend/settings.py
+*.pyc
+*.log
+*.pot
+.DS_Store
+webapp/node_modules
