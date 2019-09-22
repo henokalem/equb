@@ -1,11 +1,11 @@
 <mat-toolbar color="primary">
   <span>
-    <a routerLink="/">Home</a>
+    <a routerLink="/dashboard">Home</a>
   </span>
   <span class="spacer"></span>
   <ul>
     <li *ngIf="!userIsAuthenticated"><a mat-button routerLink="/login" routerLinkActive="mat-accent">Login</a></li>
     <!-- <li><a mat-button routerLink="/signup" routerLinkActive="mat-accent">Signup</a></li> -->
-    <li *ngIf="userIsAuthenticated"><button mat-button>Logout</button></li>
+    <li *ngIf="userIsAuthenticated"><button mat-button (click)="onLogout()">Logout</button></li>
   </ul>
 </mat-toolbar>
