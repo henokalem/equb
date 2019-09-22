@@ -6,31 +6,52 @@ This is base kit for the projects base on Angular as a frontend and Django as a 
 2. Clone the project
 git clone git@github.com:kurund/django-angular-starterkit.git
 3. cd django-angular-starterkit
-3. Create and activate virtualenv
-   > virtualenv -p python3 env <br/>
+
+### Backend
+a. Create and activate virtualenv
+   > virtualenv -p python3 env
    > source env/bin/activate
-4. Install required packages
+
+b. Install required packages
    > pip install -r backend/requirements.txt
-5. Settings
-   > cd backend <br/>
+
+c. Setup
+   > cd backend
    copy settings.py.txt to settings.py and update the db credentials <br/>
    Note: I am using SQLLite for this starterkit
-6. Setup database
+
+d. Setup database
    > python manage.py migrate
-7. Run the server
+
+e. Run the server
    > python manage.py runserver
-8. Check if application is running correctly
+
+f. Check if application is running correctly
    > http://127.0.0.1:8000/
-9. Create superuser for the admin backend
+
+g. Create superuser for the admin backend
    > python manage.py createsuperuser
-10. Login as superuser
+
+h. Login as superuser
    > http://127.0.0.1:8000/admin/
-   
+
+## Setup frontend
+a. Install latest version of nodejs: https://nodejs.org/en/
+b. Install Angular CLI: https://cli.angular.io/
+c. Setup
+> cd webapp
+> npm install
+
+d. Run the project in development mode
+> ng serve <br>
+
+
 ## Structure
 Django application
 > backend folder
 
 Angular application
-> frontend folder
+> webapp folder
 
-## How to use
+## Deploying the application on production
+TBD
