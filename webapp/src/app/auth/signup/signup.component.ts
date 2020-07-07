@@ -16,6 +16,6 @@ export class SignupComponent {
       return;
     }
     this.isLoading = true;
-    this.authService.createUser(form.value.username, form.value.password);
+    this.authService.createUser(form.value.username, form.value.password1, form.value.password2);
   }
 }

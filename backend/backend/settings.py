@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'e6na0=7^v=gi8za+=&nu6%r@dzk_wzmmb6ic1p1u%8k45iz-dr'
+SECRET_KEY = 'e6u^f9i$!$5krt!4kdt&&6gxzcl2&(4^=dx3aa31ffbnbk*1w9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -43,7 +43,17 @@ INSTALLED_APPS = [
     'corsheaders',
     'api',
     'users',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
+
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.twitter',
 ]
+
+SITE_ID = 1
 
 AUTH_USER_MODEL = 'users.CustomUser'
 

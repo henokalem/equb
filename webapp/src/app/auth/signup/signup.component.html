@@ -6,8 +6,12 @@
       <mat-error *ngIf="usernameInput.invalid">Please enter a valid username.</mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input matInput type="password" name=password ngModel placeholder="Password" #passwordInput="ngModel" required/>
+      <input matInput type="password" name=password1 ngModel placeholder="Password" #passwordInput="ngModel" required/>
       <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" name=password2 ngModel placeholder="Confirm Password" #passwordInput="ngModel" required/>
+      <mat-error *ngIf="passwordInput.invalid">Confirm password.</mat-error>
     </mat-form-field>
     <button mat-raised-button color="primary" type="submit">Signup</button>
   </form>

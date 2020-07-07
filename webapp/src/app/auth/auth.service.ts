@@ -24,12 +24,13 @@ export class AuthService {
     return this.authStatusListener.asObservable();
   }
 
-  createUser(username: string, password: string) {
+  createUser(username: string, password1: string, password2: string) {
     const authData: AuthData = {
       username: username,
-      password: password
+      password1: password1,
+      password2: password2
     };
-    this.http.post('http://127.0.0.1:8000/api/v1/users/', authData)
+    this.http.post('http://127.0.0.1:8000/api/v1/rest-auth/registration/', authData)
       .subscribe(response => {
         console.log(response);
       });

@@ -1,7 +1,6 @@
 .vscode
 .idea
 env
-backend/backend/settings.py
 *.pyc
 *.log
 *.pot
