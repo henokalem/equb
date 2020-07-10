@@ -5,3 +5,7 @@ mat-form-field {
 mat-spinner {
   margin: auto;
 }
+
+.login_error {
+  padding-bottom: 10px;
+}

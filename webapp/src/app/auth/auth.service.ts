@@ -1,7 +1,7 @@
 import { AuthData } from './auth-data.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
@@ -24,35 +24,34 @@ export class AuthService {
     return this.authStatusListener.asObservable();
   }
 
-  createUser(username: string, password1: string, password2: string) {
+  setToken(token: string) {
+    this.token = token;
+  }
+
+  setIsAuthenticated(status: boolean) {
+    this.isAuthenticated = status
+  }
+
+  authStatusListenerNext() {
+    this.authStatusListener.next(true);
+  }
+
+  createUser(username: string, password1: string, password2: string) : Observable<object>{
     const authData: AuthData = {
       username: username,
       password1: password1,
       password2: password2
     };
-    this.http.post('http://127.0.0.1:8000/api/v1/rest-auth/registration/', authData)
-      .subscribe(response => {
-        console.log(response);
-      });
+    return this.http.post('http://127.0.0.1:8000/api/v1/rest-auth/registration/', authData);
   }
 
-  login(username: string, password: string) {
+  login(username: string, password: string) : Observable<object> {
     const authData: AuthData = {
       username: username,
       password: password
     };
 
-    this.http.post<{key: string}>('http://127.0.0.1:8000/api/v1/rest-auth/login/', authData)
-      .subscribe(response => {
-        const token = response.key;
-        this.token = token;
-        if (token) {
-          this.authStatusListener.next(true);
-          this.isAuthenticated = true;
-          this.saveAuthData(token);
-          this.router.navigate(['dashboard']);
-        }
-      });
+    return this.http.post<{key: string}>('http://127.0.0.1:8000/api/v1/rest-auth/login/', authData);
   }
 
   autoAuthUser() {
