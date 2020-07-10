@@ -13,6 +13,7 @@
       <input matInput type="password" name=password2 ngModel placeholder="Confirm Password" #passwordInput="ngModel" required/>
       <mat-error *ngIf="passwordInput.invalid">Confirm password.</mat-error>
     </mat-form-field>
+    <mat-error class="signup_error" *ngIf="errorMessage != ''">{{errorMessage}}</mat-error>
     <button mat-raised-button color="primary" type="submit">Signup</button>
   </form>
 </mat-card>
