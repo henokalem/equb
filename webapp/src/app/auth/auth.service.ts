@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { Subject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
-import { env } from 'process';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
