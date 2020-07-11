@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
-
-const ENVIRONMENT = 'dev';
+import { environment } from '../../environments/environment';
+import { env } from 'process';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -45,7 +45,7 @@ export class AuthService {
       password2: password2
     };
     var url = '';
-    if (ENVIRONMENT === 'dev') {
+    if (!environment.production) {
       url = 'http://127.0.0.1:8000'
     }
     return this.http.post(url + '/api/v1/rest-auth/registration/', authData);
@@ -57,7 +57,7 @@ export class AuthService {
       password: password
     };
     var url = '';
-    if (ENVIRONMENT === 'dev') {
+    if (!environment.production) {
       url = 'http://127.0.0.1:8000'
     }
     return this.http.post<{key: string}>(url + '/api/v1/rest-auth/login/', authData);
