@@ -6,3 +6,4 @@ env
 *.pot
 .DS_Store
 webapp/node_modules
+backend/db.sqlite3
