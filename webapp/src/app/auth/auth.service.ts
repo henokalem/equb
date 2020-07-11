@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Subject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
+const ENVIRONMENT = 'dev';
+
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private isAuthenticated = false;
@@ -42,7 +44,11 @@ export class AuthService {
       password1: password1,
       password2: password2
     };
-    return this.http.post('http://127.0.0.1:8000/api/v1/rest-auth/registration/', authData);
+    var url = '';
+    if (ENVIRONMENT === 'dev') {
+      url = 'http://127.0.0.1:8000'
+    }
+    return this.http.post(url + '/api/v1/rest-auth/registration/', authData);
   }
 
   login(username: string, password: string) : Observable<object> {
@@ -50,8 +56,11 @@ export class AuthService {
       username: username,
       password: password
     };
-
-    return this.http.post<{key: string}>('http://127.0.0.1:8000/api/v1/rest-auth/login/', authData);
+    var url = '';
+    if (ENVIRONMENT === 'dev') {
+      url = 'http://127.0.0.1:8000'
+    }
+    return this.http.post<{key: string}>(url + '/api/v1/rest-auth/login/', authData);
   }
 
   autoAuthUser() {
