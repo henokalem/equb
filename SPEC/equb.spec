@@ -60,6 +60,7 @@ git clone %{current_directory} %{SOURCE0}
 
 # =======================================
 %build
+# =======================================
 # Enable python 3
 scl enable rh-python36 bash
 # Create a virtualenv
