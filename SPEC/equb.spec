@@ -8,6 +8,8 @@
 %define short_name equb
 %define current_directory %(echo $PWD)
 %define release_type snapshot
+%define release 1.0.0 # Change this to something
+%define version dev.0 # Change this to something
 %define python_version python3.6
 %define summary Equb community saving
 %define root .
@@ -29,9 +31,12 @@
 # =====================================
 Name: %{project}
 Summary: %{summary}
-Source0: %{base_name}
+Version: %{version}
+Release: %{release}
+Source0: %{base_name}-%{version}
+Licence: Commercial
 Group: Henok Alem
-BuildRoot: %{_tmppath}/%{name}-buildroot
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 BuildArch: x86_64
 Requires: python, httpd, mod_wsgi
