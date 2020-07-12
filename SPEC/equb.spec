@@ -8,8 +8,8 @@
 %define short_name equb
 %define current_directory %(echo $PWD)
 %define release_type snapshot
-%define release %(hero describe rpm release) # Change this to something
-%define version %(hero describe rpm version) # Change this to something
+%define release 1.0.0 # Change this to something
+%define version dev.0 # Change this to something
 %define python_version python3.6
 %define summary Equb community saving
 %define root .
@@ -149,4 +149,4 @@ rm -rf %{_srcrpmdir}/*
 # ==============================================
 %changelog
 # ===============================================
-%(hero describe rpm changelog) # Change this to something
+1.0.0.dev.0 # Change this to something
