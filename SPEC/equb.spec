@@ -64,7 +64,7 @@ git clone %{current_directory} %{SOURCE0}
 # Create a virtualenv
 # Because we need to move virtualenv with virtualenv-tools,
 # specifying python with -p doesn't work
-virtualeenv --no-site-packages %{short_name}
+virtualenv --no-site-packages %{short_name}
 
 # =======================================
 # Install runtime dependencies
