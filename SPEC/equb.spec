@@ -4,7 +4,7 @@
 # Definitions
 # ==============================
 %define project equb
-%define base_name /home/alemaye3/equb/SOURCES/equb-dev.0
+%define base_name /home/alemaye3/equb/SOURCES/equb
 %define short_name equb
 %define current_directory %(echo $PWD)
 %define release_type snapshot
