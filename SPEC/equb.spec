@@ -30,7 +30,6 @@
 Name: %{project}
 Summary: %{summary}
 Source0: %{base_name}
-Licence: Commercial
 Group: Henok Alem
 BuildRoot: %{_tmppath}/%{name}-buildroot
 Prefix: %{_prefix}
