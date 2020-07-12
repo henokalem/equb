@@ -8,8 +8,8 @@
 %define short_name equb
 %define current_directory %(echo $PWD)
 %define release_type snapshot
-%define release 1.0.0 # Change this to something
-%define version dev.0 # Change this to something
+%define release 1.0.0
+%define version dev.0
 %define python_version python3.6
 %define summary Equb community saving
 %define root .
