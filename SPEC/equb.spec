@@ -75,7 +75,7 @@ virtualenv --no-site-packages %{short_name}
 # =========================================
 # Install the package itself
 # =========================================
-%{short_name}/bin/pip install %{SOURCE0}/backend
+%{short_name}/bin/pip install %{SOURCE0}
 
 # ========================================
 %install
