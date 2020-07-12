@@ -34,7 +34,7 @@ Summary: %{summary}
 Version: %{version}
 Release: %{release}
 Source0: %{base_name}-%{version}
-Licence: Commercial
+License: Commercial
 Group: Henok Alem
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
