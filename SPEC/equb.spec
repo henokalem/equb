@@ -61,8 +61,6 @@ git clone %{current_directory} %{SOURCE0}
 # =======================================
 %build
 # =======================================
-# Enable python 3
-scl enable rh-python36 bash
 # Create a virtualenv
 # Because we need to move virtualenv with virtualenv-tools,
 # specifying python with -p doesn't work
