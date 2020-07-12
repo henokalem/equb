@@ -145,8 +145,3 @@ rm -rf %{_srcrpmdir}/*
 
 # make sure that the environment config is not replaced
 %config(noreplace) %{config_location}%{short_name}-environment.conf
-
-# ==============================================
-%changelog
-# ===============================================
-1.0.0.dev.0 # Change this to something
