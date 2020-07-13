@@ -75,7 +75,7 @@ virtualenv --no-site-packages %{short_name}
 # =========================================
 # Install the package itself
 # =========================================
-%{SOURCE0}/bin/pip install %{SOURCE0}
+/home/alemaye3/equb/BUILD/equb/bin/pip install %{SOURCE0}
 
 # ========================================
 %install
