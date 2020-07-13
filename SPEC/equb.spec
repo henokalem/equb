@@ -93,7 +93,7 @@ cp -R %{short_name} %{buildroot}%{virtualenvs_location}
 
 # ========================================
 # How to relocate virtualenv
-~/.local/bin/virtualenv-tools --update-path /home/alemaye3/equb/BUILD/equb %{buildroot}%{virtualenvs_location}%{short_name}
+/home/alemaye3/virtualenv-tools-env/bin/virtualenv-tools --update-path /home/alemaye3/equb/BUILD/equb %{buildroot}%{virtualenvs_location}%{short_name}
 
 # =======================================
 # Copy HTTPD conf, WSGI, and Static Files
