@@ -8,5 +8,5 @@ setup(
     description='',
     author='Henok Alem',
     packages=find_packages('.'),
-    package_dir={'': ''}
+    package_dir={'equb': ''}
 )
