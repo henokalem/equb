@@ -4,8 +4,8 @@
   </span>
   <span class="spacer"></span>
   <ul>
-    <li *ngIf="!userIsAuthenticated && router.url === '/signup'"><a mat-button routerLink="/login" routerLinkActive="mat-accent">Login</a></li>
-    <li *ngIf="!userIsAuthenticated && (router.url === '/login' || router.url === '/')"><a mat-button routerLink="/signup" routerLinkActive="mat-accent">Sign up</a></li>
+    <li *ngIf="!userIsAuthenticated && routerUrl === '/signup'"><a mat-button routerLink="/login" routerLinkActive="mat-accent">Login</a></li>
+    <li *ngIf="!userIsAuthenticated && (routerUrl === '/login' || routerUrl === '/')"><a mat-button routerLink="/signup" routerLinkActive="mat-accent">Sign up</a></li>
     <!-- <li><a mat-button routerLink="/signup" routerLinkActive="mat-accent">Signup</a></li> -->
     <li *ngIf="userIsAuthenticated"><button mat-button (click)="onLogout()">Logout</button></li>
   </ul>
