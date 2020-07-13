@@ -109,7 +109,7 @@ cp %{SOURCE0}/etc/%{short_name}-environment.conf %{buildroot}%{config_location}
 # =======================================
 mkdir %{SOURCE0}/webapp/dist
 cd %{SOURCE0}/webapp && npm install
-cd %{SOURCE0}/webapp && node_modules/.bin/ng build --output-path ../dist --output-hashing none
+cd %{SOURCE0}/webapp && node_modules/.bin/ng build --output-path ../dist --output-hashing none --prod
 
 # =========================================
 %post
