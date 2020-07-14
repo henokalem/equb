@@ -104,13 +104,6 @@ cp %{SOURCE0}/etc/%{short_name}.wsgi %{buildroot}%{wsgi_conf_location}
 # move environment config file
 cp %{SOURCE0}/etc/%{short_name}-environment.conf %{buildroot}%{config_location}
 
-# ========================================
-# Run Angular
-# =======================================
-mkdir %{SOURCE0}/webapp/dist
-cd %{SOURCE0}/webapp && npm install
-cd %{SOURCE0}/webapp && node_modules/.bin/ng build --output-path ../dist
-
 # =========================================
 %post
 # =========================================
@@ -144,3 +137,10 @@ rm -rf %{_srcrpmdir}/*
 
 # make sure that the environment config is not replaced
 %config(noreplace) %{config_location}%{short_name}-environment.conf
+
+# ========================================
+# Run Angular
+# =======================================
+mkdir %{SOURCE0}/webapp/dist
+cd %{SOURCE0}/webapp && npm install
+cd %{SOURCE0}/webapp && node_modules/.bin/ng build --output-path ../dist
